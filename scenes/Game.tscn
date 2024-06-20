@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://btp0v0x4xt6k1"]
+[gd_scene load_steps=16 format=3 uid="uid://btp0v0x4xt6k1"]
 
 [ext_resource type="PackedScene" uid="uid://jjofo85x1wsx" path="res://scenes/Player.tscn" id="1_h3m2d"]
 [ext_resource type="Texture2D" uid="uid://dcssjgl47xudv" path="res://assets/sprites/world_tileset.png" id="2_sowf0"]
 [ext_resource type="PackedScene" uid="uid://ccn5tfdxwa3ic" path="res://scenes/Platform.tscn" id="3_2j1ek"]
+[ext_resource type="PackedScene" uid="uid://bh324mrag0lju" path="res://scenes/Slime.tscn" id="3_inv8r"]
 [ext_resource type="PackedScene" uid="uid://cxn64lbv26wkv" path="res://scenes/Coin.tscn" id="4_0k7p0"]
 [ext_resource type="PackedScene" uid="uid://bqkem6ws178tf" path="res://scenes/Killzone.tscn" id="5_re3f0"]
 
@@ -510,6 +511,9 @@ limit_bottom = 120
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
+
+[node name="Slime" parent="." instance=ExtResource("3_inv8r")]
+position = Vector2(424, 81)
 
 [node name="Killzone" parent="." instance=ExtResource("5_re3f0")]
 position = Vector2(0, 140)
