@@ -1,11 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://btp0v0x4xt6k1"]
+[gd_scene load_steps=19 format=3 uid="uid://btp0v0x4xt6k1"]
 
 [ext_resource type="PackedScene" uid="uid://jjofo85x1wsx" path="res://scenes/Player.tscn" id="1_h3m2d"]
+[ext_resource type="Script" path="res://scripts/GameManager.gd" id="1_hvdaw"]
 [ext_resource type="Texture2D" uid="uid://dcssjgl47xudv" path="res://assets/sprites/world_tileset.png" id="2_sowf0"]
 [ext_resource type="PackedScene" uid="uid://ccn5tfdxwa3ic" path="res://scenes/Platform.tscn" id="3_2j1ek"]
 [ext_resource type="PackedScene" uid="uid://bh324mrag0lju" path="res://scenes/Slime.tscn" id="3_inv8r"]
 [ext_resource type="PackedScene" uid="uid://cxn64lbv26wkv" path="res://scenes/Coin.tscn" id="4_0k7p0"]
 [ext_resource type="PackedScene" uid="uid://bqkem6ws178tf" path="res://scenes/Killzone.tscn" id="5_re3f0"]
+[ext_resource type="FontFile" uid="uid://xmniy2g7sw8t" path="res://assets/fonts/PixelOperator8.ttf" id="7_jcmbi"]
+[ext_resource type="FontFile" uid="uid://bepbminnjp4qw" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_m1lvf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_32fbv"]
 texture = ExtResource("2_sowf0")
@@ -491,6 +494,21 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_hvdaw")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = 173.0
+offset_top = -92.0
+offset_right = 308.0
+offset_bottom = -73.0
+theme_override_fonts/font = ExtResource("9_m1lvf")
+theme_override_font_sizes/font_size = 8
+text = "You collected 0 coin(s)!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_w6qty")
 format = 2
@@ -575,3 +593,42 @@ libraries = {
 "": SubResource("AnimationLibrary_rsq4a")
 }
 autoplay = "Move"
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="Controls" type="Label" parent="Labels"]
+offset_left = -71.0
+offset_top = -68.0
+offset_right = 72.0
+offset_bottom = -49.0
+theme_override_fonts/font = ExtResource("7_jcmbi")
+theme_override_font_sizes/font_size = 8
+text = "Space to jump!
+Left and right to move!"
+
+[node name="LookOutBelow1" type="Label" parent="Labels"]
+offset_left = -489.0
+offset_top = 27.0
+offset_right = -346.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("7_jcmbi")
+theme_override_font_sizes/font_size = 8
+text = "Look out below..."
+
+[node name="LookOutBelow2" type="Label" parent="Labels"]
+offset_left = 561.0
+offset_top = 27.0
+offset_right = 704.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("7_jcmbi")
+theme_override_font_sizes/font_size = 8
+text = "Look out below..."
+
+[node name="AnEnemy" type="Label" parent="Labels"]
+offset_left = 385.0
+offset_top = 27.0
+offset_right = 528.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("7_jcmbi")
+theme_override_font_sizes/font_size = 8
+text = "An enemy!"

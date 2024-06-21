@@ -1,8 +1,11 @@
-res://scenes/Slime.tscn
-res://scripts/Slime.gd
 res://scenes/Game.tscn
 res://scenes/Player.tscn
 res://scenes/Platform.tscn
 res://scenes/Coin.tscn
 res://scenes/Killzone.tscn
-res://scripts/Killzone.gd
+res://scenes/Slime.tscn
+res://scripts/Player.gd
+res://scripts/GameManager.gd
+res://scripts/Coin.gd
+res://default_bus_layout.tres
+res://scenes/Music.tscn

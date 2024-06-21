@@ -1,8 +1,15 @@
 extends Area2D
 
-func _on_body_entered(body):
-  # Notify the player they've picked up a coin
-  print("+1 coin!")
+# Create a variable that finds the GameManager node in the SceneTree
+@onready var game_manager = %GameManager
 
-  # Remove the Coin scene from the game
-  queue_free()
+# Create a variable that finds the AnimationPlayer node in the SceneTree
+@onready var animation_player = $AnimationPlayer
+
+func _on_body_entered(body):
+  # Increment the score when the player picks up a coin
+  game_manager.add_point()
+
+  # Play an animation that plays the coin pickup sound and removes the Coin
+  # scene from the game
+  animation_player.play("pickup")
